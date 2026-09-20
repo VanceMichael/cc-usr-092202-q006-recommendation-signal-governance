@@ -1,0 +1,42 @@
+{
+  "domain": "recommendation-signal-governance",
+  "version": 1,
+  "sample_id": "public-sample-006",
+  "actors": [
+    "创作者",
+    "资源单位",
+    "平台运营",
+    "品牌与权利审查人员"
+  ],
+  "facts": [
+    "平台已与数百个资源单位合作提供稀缺创作场景",
+    "参与者包括科研学者与多种小众职业创作者",
+    "优质内容会继续进入营销撮合与商业履约"
+  ],
+  "constraints": [
+    "推荐事件计量",
+    "异常协同识别",
+    "扶持资格审查",
+    "效果归因"
+  ],
+  "records": [
+    {
+      "id": "recommendation-signal-governance-source",
+      "kind": "source",
+      "label": "平台已与数百个资源单位合作提供稀缺创作场景",
+      "status": "active"
+    },
+    {
+      "id": "recommendation-signal-governance-review",
+      "kind": "review",
+      "label": "推荐事件计量",
+      "status": "pending"
+    },
+    {
+      "id": "recommendation-signal-governance-history",
+      "kind": "history",
+      "label": "优质内容会继续进入营销撮合与商业履约",
+      "status": "historical"
+    }
+  ]
+}
