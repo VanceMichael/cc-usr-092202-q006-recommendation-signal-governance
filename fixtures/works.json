@@ -1,0 +1,15 @@
+{
+  "works": [
+    { "work_id": "w-shen-1", "author_id": "author-shen", "published_at": "2026-08-01T09:00:00Z" },
+    { "work_id": "w-shen-2", "author_id": "author-shen", "published_at": "2026-08-15T09:00:00Z" },
+    { "work_id": "w-shen-3", "author_id": "author-shen", "published_at": "2026-08-30T09:00:00Z" },
+    { "work_id": "w-shen-4", "author_id": "author-shen", "published_at": "2026-09-10T09:00:00Z" },
+    { "work_id": "w-gu-1", "author_id": "author-gu", "published_at": "2026-08-05T09:00:00Z" },
+    { "work_id": "w-gu-2", "author_id": "author-gu", "published_at": "2026-09-02T09:00:00Z" },
+    { "work_id": "w-huo-1", "author_id": "author-huo", "published_at": "2026-08-09T10:00:00Z" },
+    { "work_id": "w-huo-2", "author_id": "author-huo", "published_at": "2026-08-09T10:00:00Z" },
+    { "work_id": "w-huo-3", "author_id": "author-huo", "published_at": "2026-08-09T10:00:00Z" },
+    { "work_id": "w-huo-4", "author_id": "author-huo", "published_at": "2026-08-09T10:00:00Z" },
+    { "work_id": "w-huo-5", "author_id": "author-huo", "published_at": "2026-08-09T10:00:00Z" }
+  ]
+}

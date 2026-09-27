@@ -1,0 +1,28 @@
+{
+  "authors": [
+    {
+      "author_id": "author-shen",
+      "stage": "established",
+      "track": "科研学者",
+      "niche": true,
+      "scenario": "极地科考越冬观测",
+      "resource_unit": "unit-polar-station"
+    },
+    {
+      "author_id": "author-gu",
+      "stage": "growing",
+      "track": "小众职业创作者",
+      "niche": true,
+      "scenario": "古籍修复纪实",
+      "resource_unit": "unit-heritage-lab"
+    },
+    {
+      "author_id": "author-huo",
+      "stage": "growing",
+      "track": "大众剧情创作者",
+      "niche": false,
+      "scenario": "都市短剧连载",
+      "resource_unit": null
+    }
+  ]
+}
