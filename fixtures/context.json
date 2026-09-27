@@ -1,6 +1,6 @@
 {
   "domain": "recommendation-signal-governance",
-  "version": 1,
+  "version": 2,
   "sample_id": "public-sample-006",
   "actors": [
     "创作者",
@@ -11,13 +11,19 @@
   "facts": [
     "平台已与数百个资源单位合作提供稀缺创作场景",
     "参与者包括科研学者与多种小众职业创作者",
-    "优质内容会继续进入营销撮合与商业履约"
+    "优质内容会继续进入营销撮合与商业履约",
+    "推荐信号治理覆盖冷启动、成长、稳定三类作者阶段",
+    "推荐事件可能来自自然分享、活动任务、付费分发或异常协同"
   ],
   "constraints": [
     "推荐事件计量",
     "异常协同识别",
     "扶持资格审查",
-    "效果归因"
+    "效果归因",
+    "同一用户或设备的重放不重复计数",
+    "风险模型只能标记待复核，不得直接处置",
+    "申诉成功后恢复权益但不删除旧判断",
+    "敏感关系数据仅供授权人员查看"
   ],
   "records": [
     {
@@ -37,6 +43,54 @@
       "kind": "history",
       "label": "优质内容会继续进入营销撮合与商业履约",
       "status": "historical"
+    },
+    {
+      "id": "stage-cold-start",
+      "kind": "author-stage",
+      "label": "冷启动阶段：作品少、受众未形成，扶持门槛最低",
+      "status": "active"
+    },
+    {
+      "id": "stage-growth",
+      "kind": "author-stage",
+      "label": "成长阶段：已有稳定产出，扶持门槛中等",
+      "status": "active"
+    },
+    {
+      "id": "stage-stable",
+      "kind": "author-stage",
+      "label": "稳定阶段：受众成熟，扶持门槛最高",
+      "status": "active"
+    },
+    {
+      "id": "scenario-field-observation",
+      "kind": "scenario",
+      "label": "稀缺场景·高原生态科研观测",
+      "status": "active"
+    },
+    {
+      "id": "scenario-heritage-craft",
+      "kind": "scenario",
+      "label": "稀缺场景·非遗手工技艺传承",
+      "status": "active"
+    },
+    {
+      "id": "scenario-polar-expedition",
+      "kind": "scenario",
+      "label": "稀缺场景·极地探险随行记录",
+      "status": "active"
+    },
+    {
+      "id": "scenario-night-workshop",
+      "kind": "scenario",
+      "label": "稀缺场景·深夜手工坊实录",
+      "status": "active"
+    },
+    {
+      "id": "scenario-exotic-pet-care",
+      "kind": "scenario",
+      "label": "稀缺场景·异宠养护科普",
+      "status": "active"
     }
   ]
 }

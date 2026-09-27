@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "推荐信号治理时间线样例",
+  "type": "object",
+  "required": [
+    "domain",
+    "version",
+    "sample_id",
+    "decision_as_of",
+    "window_days",
+    "authors",
+    "works",
+    "recommendation_events"
+  ],
+  "properties": {
+    "domain": { "type": "string", "const": "recommendation-signal-governance" },
+    "version": { "type": "integer", "minimum": 1 },
+    "sample_id": { "type": "string", "minLength": 1 },
+    "decision_as_of": { "type": "string", "format": "date-time" },
+    "window_days": { "type": "integer", "minimum": 1 },
+    "authors": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "stage", "scenario_id"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "stage": { "type": "string", "enum": ["cold_start", "growth", "stable"] },
+          "scenario_id": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "works": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "author_id", "title", "version", "publish_ts"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "author_id": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "version": { "type": "string", "minLength": 1 },
+          "publish_ts": { "type": "string", "format": "date-time" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "campaigns": { "type": "array" },
+    "paid_orders": { "type": "array" },
+    "staff": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "roles"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "roles": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "enum": ["operations", "risk_reviewer", "auditor"] }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "recommendation_events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id", "ts", "work_id", "version", "author_id",
+          "user_id", "device_id", "entrypoint", "watch_depth",
+          "relation_to_author", "channel"
+        ],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "ts": { "type": "string", "format": "date-time" },
+          "work_id": { "type": "string", "minLength": 1 },
+          "version": { "type": "string", "minLength": 1 },
+          "author_id": { "type": "string", "minLength": 1 },
+          "user_id": { "type": "string", "minLength": 1 },
+          "device_id": { "type": "string", "minLength": 1 },
+          "entrypoint": { "type": "string", "minLength": 1 },
+          "watch_depth": { "type": "number", "minimum": 0, "maximum": 1 },
+          "relation_to_author": { "type": "string", "enum": ["follower", "stranger", "coordinated"] },
+          "channel": { "type": "string", "enum": ["organic", "campaign", "paid"] },
+          "campaign_id": { "type": "string" },
+          "paid_order_id": { "type": "string" },
+          "revoked": { "type": "boolean" },
+          "revoke_ts": { "type": "string", "format": "date-time" },
+          "replay_of": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "review_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["at", "by", "author_id", "type", "reason"],
+        "properties": {
+          "at": { "type": "string", "format": "date-time" },
+          "by": { "type": "string", "minLength": 1 },
+          "author_id": { "type": "string", "minLength": 1 },
+          "type": { "type": "string", "enum": ["confirm", "overturn", "appeal_overturn"] },
+          "reason": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "followup_visits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ts", "author_id", "user_id", "watch_depth", "channel"],
+        "properties": {
+          "ts": { "type": "string", "format": "date-time" },
+          "author_id": { "type": "string", "minLength": 1 },
+          "user_id": { "type": "string", "minLength": 1 },
+          "watch_depth": { "type": "number", "minimum": 0, "maximum": 1 },
+          "channel": { "type": "string", "enum": ["organic", "campaign", "paid"] }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
